@@ -11,7 +11,7 @@ const Other = () => {
         const otherCalls = data
           .filter(
             (call) =>
-              !["HR", "support", "appointment"].includes(call.intent?.toLowerCase())
+              !["HR", "support", "appointment"].includes(call.intent)
           )
           .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)); // recent first
         setHistory(otherCalls);
